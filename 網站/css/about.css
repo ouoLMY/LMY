@@ -1,0 +1,16 @@
+body{
+    font-family:Microsoft JhengHei,'Times New Roman', Times, serif;
+}
+#banner {
+  margin-top: 4rem;
+}
+
+* {
+  font-family: 'Microsoft JhengHei', sans-serif;
+}
+.navbar {
+  display: flex;
+ /* 讓裡面的東西靠右 */
+  align-items: center;
+  padding: 10px 20px; /* 可調整左右邊距 */
+}

@@ -1,0 +1,3333 @@
+/* =========================================
+   Mia's Diary
+   Style.css Part 1
+   Reset + Global Style
+========================================= */
+
+
+/* ---------- Google Font ----------
+   English : Cormorant Garamond
+   Chinese : Zen Maru Gothic
+----------------------------------- */
+
+
+/* ---------- CSS Variables ---------- */
+
+:root {
+
+    /* Color */
+
+    --bg-color: #FFFDF9;
+
+    --bg-soft: #F8F1E8;
+
+    --main-color: #D6B89C;
+
+    --main-dark: #B68A5A;
+
+    --text-color: #4A403A;
+
+    --text-light: #8B817B;
+
+    --white: #FFFFFF;
+
+
+    /* Glass */
+
+    --glass-bg: rgba(255,255,255,0.45);
+
+    --glass-border:
+    rgba(255,255,255,0.5);
+
+
+    /* Shadow */
+
+    --shadow:
+
+    0 20px 50px rgba(0,0,0,0.08);
+
+
+    /* Radius */
+
+    --radius-lg: 30px;
+
+    --radius-md: 20px;
+
+    --radius-sm: 12px;
+
+
+    /* Transition */
+
+    --transition:
+
+    all .4s ease;
+
+
+}
+
+
+
+/* ---------- Reset ---------- */
+
+
+* {
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:smooth;
+
+}
+
+
+body {
+
+    font-family:
+
+    "Zen Maru Gothic",
+    sans-serif;
+
+
+    background:
+
+    var(--bg-color);
+
+
+    color:
+
+    var(--text-color);
+
+
+    line-height:
+
+    1.8;
+
+
+    overflow-x:hidden;
+
+}
+
+
+/* ---------- Selection ---------- */
+
+
+::selection {
+
+    background:
+
+    var(--main-color);
+
+
+    color:
+
+    var(--white);
+
+}
+
+
+
+/* ---------- Link ---------- */
+
+
+a {
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+
+/* ---------- List ---------- */
+
+
+ul {
+
+    list-style:none;
+
+}
+
+
+
+/* ---------- Image ---------- */
+
+
+img {
+
+    width:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+}
+
+
+
+/* ---------- Button ---------- */
+
+
+button {
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+}
+
+
+
+/* ---------- Container ---------- */
+
+
+.container {
+
+    width:
+
+    min(90%,1200px);
+
+
+    margin:
+
+    0 auto;
+
+}
+
+
+
+/* ---------- Section ---------- */
+
+
+.section {
+
+    padding:
+
+    120px 0;
+
+}
+
+
+
+/* ---------- Title ---------- */
+
+
+.section h2 {
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:
+
+    clamp(2rem,5vw,3.5rem);
+
+
+    font-weight:
+
+    600;
+
+
+    letter-spacing:
+
+    2px;
+
+
+    text-align:center;
+
+
+    margin-bottom:
+
+    60px;
+
+
+    position:relative;
+
+}
+
+
+
+.section h2::after {
+
+
+    content:"";
+
+
+    width:
+
+    45px;
+
+
+    height:
+
+    2px;
+
+
+    background:
+
+    var(--main-color);
+
+
+    position:absolute;
+
+
+    bottom:-15px;
+
+
+    left:50%;
+
+
+    transform:
+
+    translateX(-50%);
+
+}
+
+
+
+/* ---------- Smooth Appearance ---------- */
+
+
+body {
+
+    animation:
+
+    pageFade .8s ease forwards;
+
+}
+
+
+
+@keyframes pageFade {
+
+
+    from {
+
+        opacity:0;
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+/* ---------- Scrollbar ---------- */
+
+
+::-webkit-scrollbar {
+
+
+    width:
+
+    8px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+
+    background:
+
+    var(--bg-soft);
+
+}
+
+
+
+::-webkit-scrollbar-thumb {
+
+
+    background:
+
+    var(--main-color);
+
+
+    border-radius:
+
+    20px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+
+    background:
+
+    var(--main-dark);
+
+}
+/* =========================================
+   Navbar Style
+   Style.css Part 2
+========================================= */
+
+
+/* ---------- Header ---------- */
+
+
+.header {
+
+    position: fixed;
+
+    top: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    z-index: 999;
+
+
+}
+
+
+
+/* ---------- Navbar ---------- */
+
+
+.navbar {
+
+
+    width:
+
+    min(90%,1200px);
+
+
+
+    margin:
+
+    0 auto;
+
+
+
+    padding:
+
+    18px 35px;
+
+
+
+    display:flex;
+
+
+
+    align-items:center;
+
+
+
+    justify-content:space-between;
+
+
+
+    background:
+
+    var(--glass-bg);
+
+
+
+    backdrop-filter:
+
+    blur(20px);
+
+
+
+    -webkit-backdrop-filter:
+
+    blur(20px);
+
+
+
+    border:
+
+    1px solid var(--glass-border);
+
+
+
+    border-radius:
+
+    999px;
+
+
+
+    box-shadow:
+
+    0 10px 40px rgba(0,0,0,.08);
+
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+/* ---------- Logo ---------- */
+
+
+.logo {
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+
+    font-size:
+
+    2rem;
+
+
+
+    font-weight:
+
+    600;
+
+
+
+    letter-spacing:
+
+    1px;
+
+
+
+    color:
+
+    var(--text-color);
+
+
+
+    transition:
+
+    var(--transition);
+
+}
+
+
+
+.logo:hover {
+
+
+    color:
+
+    var(--main-dark);
+
+
+}
+
+
+
+/* ---------- Menu ---------- */
+
+
+.nav-menu {
+
+
+    display:flex;
+
+
+
+    align-items:center;
+
+
+
+    gap:
+
+    45px;
+
+
+}
+
+
+
+.nav-menu li {
+
+
+    position:relative;
+
+}
+
+
+
+.nav-menu a {
+
+
+    font-size:
+
+    .95rem;
+
+
+
+    color:
+
+    var(--text-color);
+
+
+
+    letter-spacing:
+
+    1px;
+
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+/* ---------- Hover Line ---------- */
+
+
+.nav-menu a::after {
+
+
+    content:"";
+
+
+
+    position:absolute;
+
+
+
+    left:0;
+
+
+
+    bottom:-8px;
+
+
+
+    width:0;
+
+
+
+    height:2px;
+
+
+
+    background:
+
+    var(--main-color);
+
+
+
+    transition:
+
+    .35s ease;
+
+
+}
+
+
+
+.nav-menu a:hover::after {
+
+
+    width:100%;
+
+
+}
+
+
+
+.nav-menu a:hover {
+
+
+    color:
+
+    var(--main-dark);
+
+
+}
+
+
+
+
+/* ---------- Theme Button ---------- */
+
+
+.nav-right button {
+
+
+    width:
+
+    40px;
+
+
+
+    height:
+
+    40px;
+
+
+
+    border-radius:
+
+    50%;
+
+
+
+    display:flex;
+
+
+
+    justify-content:center;
+
+
+
+    align-items:center;
+
+
+
+    color:
+
+    var(--text-color);
+
+
+
+    font-size:
+
+    1.2rem;
+
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+
+.nav-right button:hover {
+
+
+    background:
+
+    var(--main-color);
+
+
+
+    color:
+
+    white;
+
+
+
+    transform:
+
+    rotate(20deg);
+
+
+}
+
+
+
+
+
+/* ---------- Navbar Scroll State ----------
+   JS will add .active later
+----------------------------------------- */
+
+
+.header.active .navbar {
+
+
+    padding:
+
+    12px 30px;
+
+
+
+    background:
+
+    rgba(255,255,255,.75);
+
+
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.12);
+
+
+}
+
+
+
+.header.active .logo {
+
+
+    font-size:
+
+    1.7rem;
+
+
+}
+
+
+
+
+/* ---------- Mobile Menu Prepare ---------- */
+
+
+.menu-toggle {
+
+
+    display:none;
+
+
+
+    font-size:
+
+    1.5rem;
+
+
+}
+
+
+
+/* ---------- Responsive ---------- */
+
+
+@media(max-width:900px){
+
+
+    .navbar {
+
+
+        padding:
+
+        15px 25px;
+
+
+    }
+
+
+
+    .nav-menu {
+
+
+        display:none;
+
+
+    }
+
+
+
+    .menu-toggle {
+
+
+        display:block;
+
+
+    }
+
+
+}
+/* =========================================
+   Hero Section Style
+   Style.css Part 3
+========================================= */
+
+
+/* ---------- Hero ---------- */
+
+
+.hero {
+
+    width:100%;
+
+    height:100vh;
+
+    min-height:700px;
+
+
+    position:relative;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    overflow:hidden;
+
+
+    background-image:
+
+    url("../images/hero.jpg");
+
+
+    background-size:
+
+    cover;
+
+
+    background-position:
+
+    center;
+
+
+}
+
+
+
+/* ---------- Background Zoom Effect ---------- */
+
+
+.hero::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background-image:
+
+    inherit;
+
+
+    background-size:
+
+    cover;
+
+
+    background-position:
+
+    center;
+
+
+    animation:
+
+    heroZoom 15s ease infinite alternate;
+
+
+
+    z-index:-2;
+
+
+}
+
+
+
+@keyframes heroZoom {
+
+
+    from {
+
+        transform:scale(1);
+
+    }
+
+
+    to {
+
+        transform:scale(1.08);
+
+    }
+
+
+}
+
+
+
+
+/* ---------- Overlay ---------- */
+
+
+.hero-overlay {
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+
+    linear-gradient(
+
+        180deg,
+
+        rgba(255,255,255,.15),
+
+        rgba(0,0,0,.35)
+
+    );
+
+
+}
+
+
+
+/* ---------- Hero Content ---------- */
+
+
+.hero-content {
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    padding:20px;
+
+
+}
+
+
+
+/* ---------- Small Text ---------- */
+
+
+.hero-subtitle {
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:
+
+    clamp(1.2rem,3vw,1.8rem);
+
+
+    letter-spacing:
+
+    5px;
+
+
+    margin-bottom:
+
+    20px;
+
+
+
+    opacity:
+
+    0;
+
+
+    animation:
+
+    fadeUp 1s .3s forwards;
+
+
+}
+
+
+
+
+/* ---------- Main Title ---------- */
+
+
+.hero-content h1 {
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+
+    font-size:
+
+    clamp(4rem,10vw,7rem);
+
+
+
+    font-weight:
+
+    600;
+
+
+
+    letter-spacing:
+
+    5px;
+
+
+
+    line-height:
+
+    1;
+
+
+
+    margin-bottom:
+
+    25px;
+
+
+
+    opacity:
+
+    0;
+
+
+
+    transform:
+
+    translateY(40px);
+
+
+
+    animation:
+
+    fadeUp 1s .5s forwards;
+
+
+}
+
+
+
+/* ---------- Description ---------- */
+
+
+.hero-text {
+
+
+    font-size:
+
+    1.1rem;
+
+
+    letter-spacing:
+
+    3px;
+
+
+
+    margin-bottom:
+
+    40px;
+
+
+
+    opacity:
+
+    0;
+
+
+
+    animation:
+
+    fadeUp 1s .7s forwards;
+
+
+}
+
+
+
+
+
+/* ---------- Explore Button ---------- */
+
+
+.hero-btn {
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    gap:
+
+    10px;
+
+
+    padding:
+
+    15px 40px;
+
+
+    border-radius:
+
+    999px;
+
+
+
+    background:
+
+    rgba(255,255,255,.2);
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,.5);
+
+
+
+    color:white;
+
+
+
+    backdrop-filter:
+
+    blur(10px);
+
+
+
+    transition:
+
+    .4s ease;
+
+
+
+    opacity:
+
+    0;
+
+
+
+    animation:
+
+    fadeUp 1s .9s forwards;
+
+
+}
+
+
+
+
+.hero-btn:hover {
+
+
+    background:
+
+    white;
+
+
+
+    color:
+
+    var(--text-color);
+
+
+
+    transform:
+
+    translateY(-5px);
+
+
+}
+
+
+
+
+.hero-btn i {
+
+
+    transition:
+
+    .3s;
+
+
+}
+
+
+
+.hero-btn:hover i {
+
+
+    transform:
+
+    translateX(5px);
+
+
+}
+
+
+
+
+/* ---------- Scroll Down ---------- */
+
+
+.scroll-down {
+
+
+    position:absolute;
+
+
+    bottom:
+
+    40px;
+
+
+    left:
+
+    50%;
+
+
+    transform:
+
+    translateX(-50%);
+
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+    gap:
+
+    10px;
+
+
+
+    color:white;
+
+
+
+    font-size:
+
+    .8rem;
+
+
+
+    letter-spacing:
+
+    3px;
+
+
+
+    animation:
+
+    scrollMove 2s infinite;
+
+
+}
+
+
+
+
+.scroll-down i {
+
+
+    font-size:
+
+    1.5rem;
+
+
+}
+
+
+
+
+
+@keyframes scrollMove {
+
+
+    0% {
+
+
+        transform:
+
+        translate(-50%,0);
+
+
+        opacity:.5;
+
+    }
+
+
+    50% {
+
+
+        transform:
+
+        translate(-50%,15px);
+
+
+        opacity:1;
+
+    }
+
+
+    100% {
+
+
+        transform:
+
+        translate(-50%,0);
+
+
+        opacity:.5;
+
+    }
+
+
+}
+
+
+
+
+/* ---------- Fade Up Animation ---------- */
+
+
+@keyframes fadeUp {
+
+
+    from {
+
+
+        opacity:0;
+
+
+        transform:
+
+        translateY(40px);
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+}
+
+
+
+
+
+/* ---------- Mobile Hero ---------- */
+
+
+@media(max-width:768px){
+
+
+    .hero {
+
+
+        min-height:
+
+        600px;
+
+
+        background-position:
+
+        center;
+
+
+    }
+
+
+
+    .hero-content h1 {
+
+
+        letter-spacing:
+
+        2px;
+
+
+    }
+
+
+
+    .hero-subtitle {
+
+
+        letter-spacing:
+
+        3px;
+
+
+    }
+
+
+
+    .hero-text {
+
+
+        font-size:
+
+        .95rem;
+
+
+    }
+
+
+
+    .hero-btn {
+
+
+        padding:
+
+        13px 30px;
+
+
+    }
+
+
+}
+/* =========================================
+   Content Section Style
+   Style.css Part 4
+========================================= */
+
+
+/* =========================================
+   Diary Section
+========================================= */
+
+
+.diary-list {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+
+    gap:
+
+    35px;
+
+
+}
+
+
+
+.card {
+
+
+    background:
+
+    rgba(255,255,255,.7);
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,.5);
+
+
+
+    padding:
+
+    40px;
+
+
+
+    border-radius:
+
+    var(--radius-lg);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    transition:
+
+    .5s ease;
+
+
+
+    position:relative;
+
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.card::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:100px;
+
+
+    height:100px;
+
+
+    background:
+
+    var(--main-color);
+
+
+
+    opacity:.15;
+
+
+
+    border-radius:50%;
+
+
+
+    top:-40px;
+
+
+
+    right:-40px;
+
+
+}
+
+
+
+.card:hover {
+
+
+    transform:
+
+    translateY(-10px);
+
+
+
+    box-shadow:
+
+    0 30px 60px rgba(0,0,0,.12);
+
+
+}
+
+
+
+.card span {
+
+
+    font-size:
+
+    .85rem;
+
+
+
+    color:
+
+    var(--text-light);
+
+
+
+    letter-spacing:
+
+    2px;
+
+
+}
+
+
+
+.card h3 {
+
+
+    margin:
+
+    15px 0;
+
+
+
+    font-size:
+
+    1.4rem;
+
+
+
+    font-weight:
+
+    500;
+
+
+}
+
+
+
+.card p {
+
+
+    color:
+
+    var(--text-light);
+
+
+
+    margin-bottom:
+
+    20px;
+
+
+}
+
+
+
+.card a {
+
+
+    color:
+
+    var(--main-dark);
+
+
+
+    font-size:
+
+    .9rem;
+
+
+
+    letter-spacing:
+
+    1px;
+
+
+}
+
+
+
+.card a:hover {
+
+
+    opacity:.7;
+
+
+}
+
+
+
+/* =========================================
+   Gallery Section
+========================================= */
+
+
+.gallery-grid {
+
+
+    columns:
+
+    3 250px;
+
+
+    column-gap:
+
+    25px;
+
+
+}
+
+
+
+.gallery-grid img {
+
+
+    margin-bottom:
+
+    25px;
+
+
+
+    border-radius:
+
+    var(--radius-md);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    transition:
+
+    .5s ease;
+
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+.gallery-grid img:hover {
+
+
+    transform:
+
+    translateY(-8px)
+    scale(1.02);
+
+
+
+}
+
+
+
+
+/* =========================================
+   Music Card
+========================================= */
+
+
+.music-card {
+
+
+    max-width:
+
+    600px;
+
+
+
+    margin:
+
+    0 auto;
+
+
+
+    padding:
+
+    35px;
+
+
+
+    display:flex;
+
+
+
+    align-items:center;
+
+
+
+    gap:
+
+    25px;
+
+
+
+    background:
+
+    rgba(255,255,255,.65);
+
+
+
+    border-radius:
+
+    var(--radius-lg);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+}
+
+
+
+.music-card i {
+
+
+    width:
+
+    70px;
+
+
+    height:
+
+    70px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+
+    border-radius:
+
+    50%;
+
+
+
+    background:
+
+    var(--main-color);
+
+
+
+    color:white;
+
+
+
+    font-size:
+
+    2rem;
+
+
+
+    animation:
+
+    rotateMusic 5s linear infinite;
+
+
+}
+
+
+
+.music-card h3 {
+
+
+    font-size:
+
+    1.3rem;
+
+
+}
+
+
+
+.music-card p {
+
+
+    color:
+
+    var(--text-light);
+
+
+}
+
+
+
+@keyframes rotateMusic {
+
+
+    from {
+
+
+        transform:
+
+        rotate(0deg);
+
+
+    }
+
+
+    to {
+
+
+        transform:
+
+        rotate(360deg);
+
+
+    }
+
+}
+
+
+
+
+
+/* =========================================
+   About Section
+========================================= */
+
+
+#about .container {
+
+
+    max-width:
+
+    800px;
+
+
+
+    text-align:center;
+
+
+}
+
+
+
+#about p {
+
+
+    font-size:
+
+    1.1rem;
+
+
+
+    color:
+
+    var(--text-light);
+
+
+
+    line-height:
+
+    2;
+
+
+}
+
+
+
+
+
+/* =========================================
+   Footer
+========================================= */
+
+
+footer {
+
+
+    padding:
+
+    40px 0;
+
+
+
+    text-align:center;
+
+
+
+    background:
+
+    var(--bg-soft);
+
+
+
+    color:
+
+    var(--text-light);
+
+
+
+    font-size:
+
+    .9rem;
+
+
+}
+
+
+
+
+
+/* =========================================
+   Mobile
+========================================= */
+
+
+@media(max-width:768px){
+
+
+
+    .section {
+
+
+        padding:
+
+        80px 0;
+
+
+    }
+
+
+
+    .diary-list {
+
+
+        grid-template-columns:
+
+        1fr;
+
+
+    }
+
+
+
+    .card {
+
+
+        padding:
+
+        30px;
+
+
+    }
+
+
+
+    .gallery-grid {
+
+
+        columns:
+
+        2 150px;
+
+
+    }
+
+
+
+    .music-card {
+
+
+        padding:
+
+        25px;
+
+
+    }
+
+
+
+}
+
+
+@media(max-width:450px){
+
+
+    .gallery-grid {
+
+
+        columns:
+
+        1;
+
+
+    }
+
+
+}
+/* =========================================
+   Animation & Interaction Style
+   Style.css Part 5
+========================================= */
+
+
+/* =========================================
+   Page Loading
+========================================= */
+
+
+.loading {
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    background:
+
+    var(--bg-color);
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    z-index:9999;
+
+
+    transition:
+
+    opacity .8s ease,
+    visibility .8s ease;
+
+
+}
+
+
+
+.loading.hide {
+
+
+    opacity:0;
+
+
+    visibility:hidden;
+
+
+}
+
+
+
+.loading-text {
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:
+
+    3rem;
+
+
+    letter-spacing:
+
+    5px;
+
+
+    animation:
+
+    loadingPulse 1.5s infinite;
+
+
+}
+
+
+
+@keyframes loadingPulse {
+
+
+    0% {
+
+
+        opacity:.3;
+
+
+    }
+
+
+
+    50% {
+
+
+        opacity:1;
+
+
+    }
+
+
+
+    100% {
+
+
+        opacity:.3;
+
+
+    }
+
+
+}
+
+
+
+/* =========================================
+   Scroll Reveal
+========================================= */
+
+
+.reveal {
+
+
+    opacity:0;
+
+
+    transform:
+
+    translateY(50px);
+
+
+
+    transition:
+
+    1s ease;
+
+
+}
+
+
+
+.reveal.active {
+
+
+    opacity:1;
+
+
+    transform:
+
+    translateY(0);
+
+
+}
+
+
+
+/* =========================================
+   Hero Floating
+========================================= */
+
+
+.hero-content {
+
+
+    animation:
+
+    heroFloat 6s ease-in-out infinite alternate;
+
+
+}
+
+
+
+@keyframes heroFloat {
+
+
+    from {
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+
+    to {
+
+
+        transform:
+
+        translateY(-15px);
+
+
+    }
+
+
+}
+
+
+
+
+
+/* =========================================
+   Smooth Hover Effect
+========================================= */
+
+
+a,
+button,
+.card,
+img {
+
+
+    -webkit-tap-highlight-color:
+
+    transparent;
+
+
+}
+
+
+
+
+.card,
+.music-card,
+.gallery-grid img {
+
+
+    will-change:
+
+    transform;
+
+
+}
+
+
+
+
+/* =========================================
+   Image Shine Effect
+========================================= */
+
+
+.gallery-grid img {
+
+
+    position:relative;
+
+
+}
+
+
+
+.gallery-grid img:hover {
+
+
+    filter:
+
+    brightness(1.05);
+
+
+}
+
+
+
+/* =========================================
+   Button Glow
+========================================= */
+
+
+.hero-btn {
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.hero-btn::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+
+    background:
+
+    linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.5),
+
+        transparent
+
+    );
+
+
+
+    transform:
+
+    translateX(-120%);
+
+
+
+    transition:
+
+    .6s;
+
+
+}
+
+
+
+.hero-btn:hover::before {
+
+
+    transform:
+
+    translateX(120%);
+
+
+}
+
+
+
+
+
+/* =========================================
+   Navbar Smooth
+========================================= */
+
+
+.navbar {
+
+
+    transition:
+
+
+    padding .4s ease,
+    background .4s ease,
+    box-shadow .4s ease;
+
+
+}
+
+
+
+/* =========================================
+   Floating Decoration
+========================================= */
+
+
+.hero::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:
+
+    300px;
+
+
+
+    height:
+
+    300px;
+
+
+
+    border-radius:
+
+    50%;
+
+
+
+    background:
+
+    rgba(255,255,255,.15);
+
+
+
+    filter:
+
+    blur(40px);
+
+
+
+    right:
+
+    -100px;
+
+
+
+    bottom:
+
+    -100px;
+
+
+
+    animation:
+
+    floatCircle 8s infinite alternate;
+
+
+}
+
+
+
+@keyframes floatCircle {
+
+
+    from {
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+
+    to {
+
+
+        transform:
+
+        translateY(-50px);
+
+
+    }
+
+
+}
+
+
+
+
+/* =========================================
+   Dark Mode Prepare
+========================================= */
+
+
+body.dark {
+
+
+    --bg-color:#171412;
+
+
+    --bg-soft:#211D1A;
+
+
+    --text-color:#F7EFE7;
+
+
+    --text-light:#C9BBB0;
+
+
+    --white:#FFFFFF;
+
+
+    --glass-bg:
+
+    rgba(45,40,36,.65);
+
+
+
+    --glass-border:
+
+    rgba(255,255,255,.1);
+
+    --glass-bg:
+    rgba(35,31,28,.55);
+
+
+    --glass-border:
+    rgba(255,255,255,.1);
+}
+
+
+
+/* =========================================
+   Mobile Animation Reduce
+========================================= */
+
+
+@media(max-width:768px){
+
+
+    .hero-content {
+
+
+        animation:none;
+
+
+    }
+
+
+
+    .loading-text {
+
+
+        font-size:
+
+        2rem;
+
+
+    }
+
+
+}
+/* =========================================
+   Dark Mode Card Fix
+========================================= */
+
+
+body.dark .card,
+body.dark .music-card {
+
+
+    background:
+
+    rgba(40,35,32,.75);
+
+
+
+    border-color:
+
+    rgba(255,255,255,.08);
+
+
+
+}
+
+
+
+body.dark .card h3,
+body.dark .music-card h3 {
+
+
+    color:
+
+    #F5EFE8;
+
+
+}
+
+
+
+body.dark .card p,
+body.dark .music-card p {
+
+
+    color:
+
+    #CFC3BA;
+
+
+}
+
+
+
+body.dark .card span {
+
+
+    color:
+
+    #A99B91;
+
+
+}
+
+
+
+body.dark .card a {
+
+
+    color:
+
+    #D6B89C;
+
+
+}
+/* =========================================
+   Dark Mode Navbar Fix
+========================================= */
+
+
+body.dark .navbar {
+
+
+    background:
+
+    rgba(35,31,28,.55);
+
+
+
+    border-color:
+
+    rgba(255,255,255,.1);
+
+
+
+}
+
+
+
+body.dark .header.active .navbar {
+
+
+    background:
+
+    rgba(30,26,23,.85);
+
+
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.35);
+
+
+
+}
+
+
+
+body.dark .logo {
+
+
+    color:
+
+    #F5EFE8;
+
+
+}
+
+
+
+body.dark .nav-menu a {
+
+
+    color:
+
+    #E8DDD4;
+
+
+}
+
+
+
+body.dark .nav-menu a:hover {
+
+
+    color:
+
+    #D6B89C;
+
+
+}
+
+
+
+body.dark .nav-right button {
+
+
+    color:
+
+    #F5EFE8;
+
+
+}
+
+
+
+body.dark .nav-right button:hover {
+
+
+    background:
+
+    #D6B89C;
+
+
+
+    color:
+
+    #2A211C;
+
+
+}
+body.dark .click-ripple {
+
+
+    border-color:
+
+    rgba(245,239,231,.7);
+
+
+}
+/* =========================================
+   Click Ripple Effect
+========================================= */
+
+
+.click-ripple {
+
+
+    position:fixed;
+
+
+    width:20px;
+
+
+    height:20px;
+
+
+    border-radius:50%;
+
+
+    border:
+
+    2px solid rgba(214,184,156,.8);
+
+
+
+    transform:
+
+    translate(-50%,-50%);
+
+
+
+    pointer-events:none;
+
+
+    z-index:99999;
+
+
+
+    animation:
+
+    ripple .8s ease-out forwards;
+
+
+}
+
+
+
+@keyframes ripple {
+
+
+    from {
+
+
+        width:20px;
+
+
+        height:20px;
+
+
+        opacity:1;
+
+
+    }
+
+
+
+    to {
+
+
+        width:150px;
+
+
+        height:150px;
+
+
+        opacity:0;
+
+
+    }
+
+
+}
+/* =========================================
+   Music Player
+========================================= */
+
+
+.music-player {
+
+
+    position:fixed;
+
+
+    right:30px;
+
+
+    bottom:30px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:15px;
+
+
+
+    padding:15px 25px;
+
+
+
+    background:
+
+    rgba(255,255,255,.55);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    border-radius:
+
+    999px;
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    z-index:999;
+
+
+
+}
+
+
+
+.music-player button {
+
+
+    width:45px;
+
+
+    height:45px;
+
+
+    border-radius:50%;
+
+
+    background:
+
+    var(--main-color);
+
+
+
+    color:white;
+
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+
+    font-size:1.3rem;
+
+
+}
+
+
+
+.music-info span {
+
+
+    font-size:.75rem;
+
+
+    color:
+
+    var(--text-light);
+
+
+}
+
+
+
+.music-info p {
+
+
+    font-size:.9rem;
+
+
+}
+
+
+
+body.dark .music-player {
+
+
+    background:
+
+    rgba(40,35,32,.75);
+
+
+}
+
+
+
+body.dark .music-info p {
+
+
+    color:#F5EFE8;
+
+
+}
+/* =========================================
+   Rotating Record Animation
+========================================= */
+
+
+.record {
+
+
+    width:
+
+    55px;
+
+
+    height:
+
+    55px;
+
+
+    border-radius:
+
+    50%;
+
+
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        #333 0%,
+
+        #222 35%,
+
+        #111 70%,
+
+        #000 100%
+
+    );
+
+
+
+    position:relative;
+
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+
+}
+
+
+/* 唱片紋路 */
+
+
+.record::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:
+
+    75%;
+
+
+    height:
+
+    75%;
+
+
+    border-radius:50%;
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,.2);
+
+
+
+}
+
+
+
+.record-center {
+
+    width:30px;
+
+    height:30px;
+
+
+    background:
+
+    url("../images/logo.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+
+    border-radius:50%;
+
+
+}
+
+
+
+/* 播放時旋轉 */
+
+
+.record.playing {
+
+
+    animation:
+
+    rotateRecord 5s linear infinite;
+
+
+}
+
+
+
+@keyframes rotateRecord {
+
+
+    from {
+
+
+        transform:
+
+        rotate(0deg);
+
+
+    }
+
+
+    to {
+
+
+        transform:
+
+        rotate(360deg);
+
+
+    }
+
+
+}
+.record-center{
+
+background:
+
+url("../images/musiclogo1.jpg");
+
+background-size:cover;
+
+}

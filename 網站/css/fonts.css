@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('../fonts/wt005.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ElegantSongTi';
+  src: url('../fonts/jf-openhuninn-2.1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-wending {
+  font-family: 'MyCustomFont', sans-serif;
+}
+
+.font-songti {
+  font-family: 'ElegantSongTi', serif;
+}
