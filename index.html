@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mia's Diary</title>
+
+    <meta name="description" content="Photograph • Life • Memory">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+<!-- Music Player -->
+
+<div class="music-player">
+
+
+    <div class="record" id="record">
+
+        <div class="record-center"></div>
+
+    </div>
+
+
+
+    <button id="musicBtn">
+
+        <i class="ri-play-fill"></i>
+
+    </button>
+
+
+
+    <div class="music-info">
+
+        <span>Now Playing</span>
+
+        <p>
+            My Favorite Song
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<audio id="bgMusic" loop>
+
+    <source src="music/bgm.mp3" type="audio/mp3">
+
+</audio>
+<!-- ================= NAVBAR ================= -->
+
+<header class="header">
+
+    <nav class="navbar">
+
+        <a href="#" class="logo">
+            ☁ Mia
+        </a>
+
+        <ul class="nav-menu">
+
+            <li><a href="#home">Home</a></li>
+
+            <li><a href="#diary">Diary</a></li>
+
+            <li><a href="#gallery">Gallery</a></li>
+
+            <li><a href="#music">Music</a></li>
+
+            <li><a href="#about">About</a></li>
+
+        </ul>
+
+        <div class="nav-right">
+
+            <button id="themeBtn">
+
+                <i class="ri-moon-line"></i>
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="hero-subtitle">
+            Photograph • Life • Memory
+        </p>
+
+        <h1>
+            Mia's Diary
+        </h1>
+
+        <p class="hero-text">
+            把每一天，都收藏起來。
+        </p>
+
+        <a href="#diary" class="hero-btn">
+
+            Explore
+
+            <i class="ri-arrow-right-line"></i>
+
+        </a>
+
+    </div>
+
+    <div class="scroll-down">
+
+        <span>Scroll</span>
+
+        <i class="ri-arrow-down-line"></i>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= LATEST DIARY ================= -->
+
+<section id="diary" class="section">
+
+    <div class="container">
+
+        <h2>
+
+            Latest Diary
+
+        </h2>
+
+        <div class="diary-list">
+
+            <article class="card">
+
+                <span>2026.07.30</span>
+
+                <h3>
+
+                    今天開始重新設計網站。
+
+                </h3>
+
+                <p>
+
+                    希望把這裡變成屬於自己的生活日誌。
+
+                </p>
+
+                <a href="#">
+
+                    Read More →
+
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <span>2026.07.28</span>
+
+                <h3>
+
+                    今天拍了很多照片。
+
+                </h3>
+
+                <p>
+
+                    下午的天空真的很漂亮。
+
+                </p>
+
+                <a href="#">
+
+                    Read More →
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery" class="section">
+
+    <div class="container">
+
+        <h2>
+
+            Gallery
+
+        </h2>
+
+        <div class="gallery-grid">
+
+            <img src="images/gallery1.jpg">
+
+            <img src="images/gallery2.jpg">
+
+            <img src="images/gallery3.jpg">
+
+            <img src="images/gallery4.jpg">
+
+            <img src="images/gallery5.jpg">
+
+            <img src="images/gallery6.jpg">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MUSIC ================= -->
+
+<section id="music" class="section">
+
+    <div class="container">
+
+        <h2>
+
+            Now Playing
+
+        </h2>
+
+        <div class="music-card">
+
+            <i class="ri-disc-fill"></i>
+
+            <div>
+
+                <h3>
+
+                    Lofi Music
+
+                </h3>
+
+                <p>
+
+                    Relax & Coding
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="section">
+
+    <div class="container">
+
+        <h2>
+
+            About Me
+
+        </h2>
+
+        <p>
+
+            Hello!
+
+            我喜歡攝影、程式設計、
+            記錄生活以及分享每天的點滴。
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+
+        © 2026 Mia's Diary
+
+    </p>
+
+</footer>
+
+
+
+<!-- JS -->
+
+<script src="js/main.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/music.js"></script>
+</body>
+</html>
